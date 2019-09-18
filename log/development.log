@@ -1179,3 +1179,12 @@ Redirected to http://142.93.11.41:33012/posts/5
 Completed 302 Found in 77ms (ActiveRecord: 6.9ms)
 
 
+Started GET "/posts/5" for 96.91.57.131 at 2019-09-18 23:51:07 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 11ms (Views: 9.3ms | ActiveRecord: 0.1ms)
+
+
