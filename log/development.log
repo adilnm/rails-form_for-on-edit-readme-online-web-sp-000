@@ -1150,3 +1150,32 @@ Completed 200 OK in 13ms (Views: 11.9ms | ActiveRecord: 0.2ms)
 
 
   [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/posts" for 96.91.57.131 at 2019-09-18 23:50:46 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 235ms (Views: 225.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/posts/5/edit" for 96.91.57.131 at 2019-09-18 23:51:00 +0000
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered posts/edit.html.erb within layouts/application (9.8ms)
+Completed 200 OK in 24ms (Views: 17.9ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/posts/5" for 96.91.57.131 at 2019-09-18 23:51:07 +0000
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JteahwLGld7u6IVoubT5hHYLQWvOXcRriG2EELQsKT/N/VAfrJJ9Fjk2IWLrHa+VtgXHKUK/+kMlMPGtex40Zg==", "post"=>{"title"=>"Immigration", "description"=>"new"}, "commit"=>"Update Post", "id"=>"5"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "posts" SET "title" = ?, "description" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["title", "Immigration"], ["description", "new"], ["updated_at", "2019-09-18 23:51:07.154899"], ["id", 5]]
+  [1m[35m (6.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://142.93.11.41:33012/posts/5
+Completed 302 Found in 77ms (ActiveRecord: 6.9ms)
+
+
